@@ -1,0 +1,17 @@
+.bor{
+    border: 1px solid #fff;
+}
+.login__formSection{
+    padding: 2.5rem;
+    background-color: #fff;
+    display: grid;
+    grid-template-rows: 60px 1fr;
+}
+.earthlogo{
+    width: 8rem;
+    height: 8rem;
+}
+.top_text{
+    color: black;
+    margin-bottom: 1rem;
+}

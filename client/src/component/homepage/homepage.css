@@ -1,0 +1,62 @@
+.text__info{
+    text-align: justify; /* For Edge */
+    -moz-text-align-last: left; /* For Firefox prior 58.0 */
+    text-align-last: left;
+    color: #fff;
+}
+.home__grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 3rem;
+    justify-content:center;
+    align-items: center;
+}
+.space__left{
+    height: 37rem;
+    display: grid;
+    justify-content:center;
+    align-items:end;
+}
+
+.className{
+    margin-top: 5rem;
+}
+.set__puzzle{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.round1{
+    text-align: justify; /* For Edge */
+    -moz-text-align-last: left; /* For Firefox prior 58.0 */
+    text-align-last: left;
+    color: #fff;
+    margin-top: 6rem;
+}
+.round2__heading{
+    text-align: justify; /* For Edge */
+    -moz-text-align-last: left; /* For Firefox prior 58.0 */
+    text-align-last: left;
+    color: #fff;
+    margin-top: 2rem;
+}
+.round1_head{
+    font-size: 2rem;
+}
+.ssl{
+    float: left;
+    margin-top: -5rem;
+}
+.match__section{
+    display: grid;
+    grid-template-columns: 0.9fr 1.2fr;
+    column-gap: 2rem;
+}
+.round2__head{
+    font-size: 2rem;
+}
+.card-grid {
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 20px;
+}
