@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState,useEffect } from 'react'
 import Apps from './App';
 import Magic from './magicmatch';
 import './homepage.css'
@@ -7,30 +7,38 @@ import { useDispatch, useSelector } from "react-redux";
 import {  setRound } from "../../state/index";
 
 
-const Stage1 = () => {
-  const [roun,setRoun] = useState(1);
+const Stage1 = ({rounds}) => {
+  const [roun,setRoun] = useState(rounds);
   const dispatch = useDispatch();
-    const round = useSelector((state) => state.round);
+
     const userId = useSelector((state) => state.user);
     const token = useSelector((state) => state.token);
-    console.log("userId",userId)
-  const handelbutton = ()=>{
-    setRoun(roun+1)
-    dispatch(
-      setRound(
-        {
-          round:roun, 
-        })
+  
+   
+
+
+
+  const handelbutton = async (rounding)=>{
+    const savedUserResponse =  fetch(
+      `http://localhost:3001/users/${userId}/rounds`,
+      {
+        method: "PATCH",
+        headers: { Authorization: `Bearer ${token}`,"Content-Type": "application/json" },
+        body: JSON.stringify({id:userId,round: rounding}),
+      }
     );
-    
+
+    setRoun(rounding)    
   }
-  console.log(round)
+  
   return (
     <div>
      {
       roun == 1? <div className="round1_div container">
       <Apps level={levelFactory(4 ** 2)} _id={userId} _token={token}/>
-      <div onClick={handelbutton} className="button ssl button--flex">
+      <div onClick={()=>{
+        handelbutton(2)
+      }} className="button ssl button--flex">
                 Next 
                 <svg
                   class="button__icon"
@@ -53,8 +61,10 @@ const Stage1 = () => {
 
      </div>
      : roun  == 2?<>
-     <Magic/>
-     <div onClick={handelbutton} className="button ssl button--flex">
+     <Magic userId={userId} token = {token}/>
+     <div onClick={()=>{
+        handelbutton(3)
+      }} className="button ssl button--flex">
                 Skip 
                 <svg
                   class="button__icon"
@@ -74,7 +84,7 @@ const Stage1 = () => {
                   ></path>
                 </svg>
             </div>
-     </>:<>round 3</>
+     </>:<>Round 3</>
 
      }
      

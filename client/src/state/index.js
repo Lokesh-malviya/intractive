@@ -5,7 +5,8 @@ const initialState = {
   token: null,
   graph:null,
   round:1,
-  times:0
+  times:0,
+  point:0
 };
 
 export const authSlice = createSlice({
@@ -29,10 +30,13 @@ export const authSlice = createSlice({
     setRound: (state, action) => {
       state.round = action.payload.round;
     },
+    setPoints: (state, action) => {
+      state.point = action.payload.point;
+    },
     
   },
 });
 
-export const {setLogin, setLogout,setGraph,startTime,setRound } =
+export const {setLogin, setLogout,setGraph,startTime,setRound,setPoints } =
   authSlice.actions;
 export default authSlice.reducer;

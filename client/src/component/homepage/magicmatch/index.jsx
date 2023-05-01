@@ -1,6 +1,7 @@
 import React,{useEffect,useState} from 'react'
 import '../homepage.css';
-
+import { useDispatch, useSelector } from "react-redux";
+import {  setRound,setPoints } from "../../../state/index";
 import planet1 from "../../../assets/img/planet1.jpg";
 import planet2 from "../../../assets/img/planet2.jpg";
 import planet3 from "../../../assets/img/planet3.jpg";
@@ -17,12 +18,16 @@ const cardImages=[
     {"src":planet5,matched:false},
     {"src":planet6,matched:false},
 ]
-const Magic = () => {
+const Magic = ({userId,token}) => {
     const [cards, setCards] = useState([])
     const [turns, setTurns] = useState (0)
     const [choiceOne, setChoiceOne] = useState(null)
     const [choiceTwo, setChoiceTwo] = useState(null)
     const [disabled, setDisabled] = useState(false)
+    const [count,setCount] = useState(0);
+    const dispatch = useDispatch();
+    const round = useSelector((state) => state.round);
+    const point = useSelector((state) => state.point);
 // shuffle cards
         const shuffleCards = () => {
         const shuffledCards = [...cardImages, ...cardImages]
@@ -45,6 +50,7 @@ const Magic = () => {
             setCards (prevCards => {
                 return prevCards.map(card => {
                 if (card.src === choiceOne.src) {
+                    setCount(count+1)
                     return {...card, matched: true}
                 } else {
                     return card
@@ -58,8 +64,23 @@ const Magic = () => {
         }
         }
         }, [choiceOne, choiceTwo])
+
+    const multifetch = async () => {
+        const savedUserResponse =  fetch(
+            `http://localhost:3001/users/${userId}/points`,
+            {
+              method: "PATCH",
+              headers: { Authorization: `Bearer ${token}`,"Content-Type": "application/json" },
+              body: JSON.stringify({id:userId,points: 150}),
+            }
+          );
+          const savedUser =  await savedUserResponse.json();
+          console.log("ssss")
+    }
         
-        
+    if(count == 6){
+        multifetch()
+    }
     // reset choices & increase turn
     const resetTurn = () => {
         setChoiceOne (null)

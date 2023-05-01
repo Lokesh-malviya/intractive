@@ -59,7 +59,7 @@ class App extends Component {
           /*this.state.level.tileSet*/
           _id={this.state.userId}
           token={this.state.token}
-          numbers={this.state.level.tileSet}
+          numbers={[1,2,3,4,5,6,7,8,9,10,11,12,13,16,14,15]}
           onResetClick={this.onResetClick}
           onNewClick={this.onNewClick}
           original={this.state.original.tileSet}

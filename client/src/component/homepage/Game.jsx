@@ -73,7 +73,7 @@ class Game extends Component {
     }
   };
 
-  handleDialogClose = () => {
+  handleDialogClose = async () => {
     this.setState({
       dialogOpen: false,
     });
@@ -86,7 +86,7 @@ class Game extends Component {
         body: JSON.stringify({id:this.state.userId,points: 100}),
       }
     );
-    const savedUser =  savedUserResponse.json();
+    const savedUser =  await savedUserResponse.json();
     
   };
 

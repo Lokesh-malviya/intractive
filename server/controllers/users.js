@@ -57,9 +57,21 @@ export const cropGraph = async (req,res)=>{
 export const setPoints = async (req,res)=>{
     try {
         const {id,points} = req.body;
-        console.log(points)
         const user = await User.findById(id);
-        user.points = points;
+    
+      
+        user.points = user.points+points;
+        await user.save();
+        res.status(200).json(user);
+    } catch (err) {
+        res.status(404).json({message:err.message});
+    }
+}
+export const setRounds = async (req,res)=>{
+    try {
+        const {id,round} = req.body;
+        const user = await User.findById(id);
+        user.round = round;
         await user.save();
         res.status(200).json(user);
     } catch (err) {

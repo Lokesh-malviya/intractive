@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState,useEffect } from 'react'
 import reactLogo from './assets/react.svg'
 import './App.css'
 import Login from './component/login/index.jsx'
@@ -15,6 +15,21 @@ import { BrowserRouter, Route,Routes,Navigate } from 'react-router-dom'
 
 function App() {
  const isAuth = Boolean(useSelector((state) => state.token));
+ const userId = useSelector((state) => state.user);
+ const token = useSelector((state) => state.token);
+ const [ro,setRo] = useState(0);
+ const oneTime = async ()=>{
+  const response = await fetch(`http://localhost:3001/users/${userId}`, {
+    method: "GET",
+    headers: { Authorization: `Bearer ${token}` },
+  });
+  const { round } = await response.json();
+  setRo(round);
+ }
+ useEffect(() => {
+  oneTime();
+
+ }, [isAuth]);
 
   return (
     <div className="App">
@@ -24,7 +39,7 @@ function App() {
         <Route path="/admin" element={<Admin/>}/>
         <Route path="/login" element={<Login/>} />
         <Route path="/home" element={isAuth ?  <HomePage/>: <Navigate to="/"/>}/>
-        <Route path="/home/round"  element={<MuiThemeProvider><Navbar startTimer={1}/><Stage1/>{/* <Apps level={levelFactory(4 ** 2)} /> */}</MuiThemeProvider> } />
+        <Route path="/home/round"  element={<MuiThemeProvider><Navbar startTimer={1}/><Stage1 rounds={ro}/>{/* <Apps level={levelFactory(4 ** 2)} /> */}</MuiThemeProvider> } />
       </Routes>
       </BrowserRouter>
 

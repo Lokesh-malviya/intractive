@@ -20,6 +20,10 @@ const UserSchema = new mongoose.Schema({
     time:{
         type: Number,
         
+    },
+    round:{
+        type: Number,
+        default:1 
     }
 
 },

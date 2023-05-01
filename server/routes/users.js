@@ -1,7 +1,8 @@
 import express from "express";
 import{
     getUser,
-    setPoints
+    setPoints,
+    setRounds
 } from "../controllers/users.js";
 import {verifyToken} from "../middleware/auth.js";
 
@@ -11,6 +12,7 @@ const router = express.Router();
 
 router.get("/:id",verifyToken,getUser);
 router.patch("/:id/points",verifyToken,setPoints)
+router.patch("/:id/rounds",verifyToken,setRounds)
 /* router.patch("/:id/crops",verifyToken,setCrops);
 router.patch("/:id/crops-delete",verifyToken,delCrops); */
 
