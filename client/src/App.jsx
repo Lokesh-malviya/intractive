@@ -19,7 +19,7 @@ function App() {
  const token = useSelector((state) => state.token);
  const [ro,setRo] = useState(0);
  const oneTime = async ()=>{
-  const response = await fetch(`http://localhost:3001/users/${userId}`, {
+  const response = await fetch(`https://interactive-ax75.onrender.com/users/${userId}`, {
     method: "GET",
     headers: { Authorization: `Bearer ${token}` },
   });

@@ -62,7 +62,7 @@ const Form = () => {
     
 
      const savedUserResponse = await fetch(
-      "http://localhost:3001/auth/register",
+      "https://interactive-ax75.onrender.com/auth/register",
       {
         method: "POST",
         headers: {  "Access-Control-Allow-Origin":"*",
@@ -82,7 +82,7 @@ const Form = () => {
   };
 
   const login = async (values, onSubmitProps) => {
-    const loggedInResponse = await fetch("http://localhost:3001/auth/login", {
+    const loggedInResponse = await fetch("https://interactive-ax75.onrender.com/auth/login", {
       method: "POST",
       headers: { "Access-Control-Allow-Origin":"*",
       "Content-Type": "application/json" },
