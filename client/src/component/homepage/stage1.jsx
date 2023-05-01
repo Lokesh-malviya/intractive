@@ -3,13 +3,11 @@ import Apps from './App';
 import Magic from './magicmatch';
 import './homepage.css'
 import levelFactory from '../../lib/levels-factory';
-import { useDispatch, useSelector } from "react-redux";
-import {  setRound } from "../../state/index";
+import {useSelector } from "react-redux";
 
 
 const Stage1 = ({rounds}) => {
   const [roun,setRoun] = useState(rounds);
-  const dispatch = useDispatch();
 
     const userId = useSelector((state) => state.user);
     const token = useSelector((state) => state.token);

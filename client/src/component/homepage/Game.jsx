@@ -12,7 +12,6 @@ import Button from '@mui/material/Button';
 import Snackbar from 'material-ui/Snackbar';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import { useDispatch, useSelector } from "react-redux";
 class Game extends Component {
   constructor(props) {
     super(props);

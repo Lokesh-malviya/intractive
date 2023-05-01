@@ -7,12 +7,12 @@ import {
   Typography,
   useTheme,
 } from "@mui/material";
-import EditOutlinedIcon from "@mui/icons-material/EditOutlined";
+
 import { Formik } from "formik";
 import * as yup from "yup";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { setLogin } from "../../state/index";
+import { setLogin,setSuccess } from "../../state/index";
 /*import Dropzone from "react-dropzone"; */
 
 
@@ -50,6 +50,7 @@ const Form = () => {
   const isLogin = pageType === "login";
   const isRegister = pageType === "register";
 
+
   const register = async (values, onSubmitProps) => {
     // this allows us to send form info with image
     if(values.password === values.cnfpassword){
@@ -70,6 +71,7 @@ const Form = () => {
       }
     );
     const savedUser = await savedUserResponse.json();
+
     }
     onSubmitProps.resetForm();
 
@@ -89,11 +91,15 @@ const Form = () => {
     const loggedIn = await loggedInResponse.json();
     console.log("id",loggedIn.token)
     onSubmitProps.resetForm();
+    
     if (loggedIn) {
        dispatch(
         setLogin({
           user: loggedIn.user._id,
           token: loggedIn.token,
+        }),
+        setSuccess({
+          success:true
         })
       );
        navigate("/home");
@@ -107,6 +113,7 @@ const Form = () => {
   };
 
   return (
+  
     <Formik
       onSubmit={handleFormSubmit}
       initialValues={isLogin ? initialValuesLogin : initialValuesRegister}

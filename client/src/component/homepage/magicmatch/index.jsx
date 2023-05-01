@@ -1,7 +1,6 @@
 import React,{useEffect,useState} from 'react'
 import '../homepage.css';
-import { useDispatch, useSelector } from "react-redux";
-import {  setRound,setPoints } from "../../../state/index";
+
 import planet1 from "../../../assets/img/planet1.jpg";
 import planet2 from "../../../assets/img/planet2.jpg";
 import planet3 from "../../../assets/img/planet3.jpg";
@@ -25,9 +24,6 @@ const Magic = ({userId,token}) => {
     const [choiceTwo, setChoiceTwo] = useState(null)
     const [disabled, setDisabled] = useState(false)
     const [count,setCount] = useState(0);
-    const dispatch = useDispatch();
-    const round = useSelector((state) => state.round);
-    const point = useSelector((state) => state.point);
 // shuffle cards
         const shuffleCards = () => {
         const shuffledCards = [...cardImages, ...cardImages]
