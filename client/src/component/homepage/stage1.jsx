@@ -345,7 +345,7 @@ const Stage1 = () => {
                   ></path>
                 </svg>
             </div>
-        </>:finish?
+        </>:finish || roun == 8?
         <>
               <Confetti className='contaier'/>
               <h1 className="home__title">
