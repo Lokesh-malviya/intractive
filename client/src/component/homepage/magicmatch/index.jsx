@@ -61,21 +61,22 @@ const Magic = ({userId,token}) => {
         }
         }, [choiceOne, choiceTwo])
 
-    const multifetch = async () => {
+    const multifetchd = async () => {
         const savedUserResponse =  fetch(
-            `https://interactive-ax75.onrender.com/users/${userId}/points`,
+            `http://localhost:3001/users/${userId}/points`,
             {
               method: "PATCH",
               headers: { Authorization: `Bearer ${token}`,"Content-Type": "application/json" },
-              body: JSON.stringify({id:userId,points: 150}),
+              body: JSON.stringify({id:userId,roundS: 2}),
             }
           );
-          const savedUser =  await savedUserResponse.json();
+          
           console.log("ssss")
     }
         
     if(count == 6){
-        multifetch()
+        multifetchd()
+        setCount(7)
     }
     // reset choices & increase turn
     const resetTurn = () => {

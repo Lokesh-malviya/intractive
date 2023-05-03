@@ -1,5 +1,6 @@
 import mongoose from "mongoose";
 
+
 const UserSchema = new mongoose.Schema({
     email:{
         type: String,
@@ -17,13 +18,26 @@ const UserSchema = new mongoose.Schema({
         default:0 
         
     },
-    time:{
-        type: Number,
+    timesu:{
+        type:Array,
+        default:[],
         
     },
     round:{
         type: Number,
         default:1 
+    },
+    listRound:{
+        type:Array,
+        default:[],
+    },
+    timespent:{
+        type: Number,
+        default:0.0
+    },
+    admin:{
+        type: Number,
+        default:0
     }
 
 },

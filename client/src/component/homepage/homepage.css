@@ -60,3 +60,9 @@
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-gap: 20px;
 }
+.lead{
+    margin-left: 4rem;
+}
+.sslp{
+    display:none;
+}

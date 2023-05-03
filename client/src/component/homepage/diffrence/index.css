@@ -1,0 +1,30 @@
+.round5__images{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 1rem;
+}
+.left__img,
+.right__img{
+    border: 2px solid #fff;
+}
+.round5__heading{
+    text-align: justify; /* For Edge */
+     /* For Firefox prior 58.0 */
+    text-align: left;
+    color: #fff;
+    
+  }
+.ssl__ans1:hover{
+    background-color: #10A37F;
+}
+.ssl__ans2:hover{
+    background-color: #BF1717;
+}
+.ssl__ans3{
+    background-color: #10A37F;
+    cursor: not-allowed;
+}
+.ssl__ans4{
+    background-color: #BF1717;
+    cursor: not-allowed;
+}

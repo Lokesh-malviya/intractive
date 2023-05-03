@@ -78,11 +78,11 @@ class Game extends Component {
     });
     console.log(this.state.token)
     const savedUserResponse =  fetch(
-      `https://interactive-ax75.onrender.com/users/${this.state.userId}/points`,
+      `http://localhost:3001/users/${this.state.userId}/points`,
       {
         method: "PATCH",
         headers: { Authorization: `Bearer ${this.state.token}`,"Content-Type": "application/json" },
-        body: JSON.stringify({id:this.state.userId,points: 100}),
+        body: JSON.stringify({id:this.state.userId,roundS: 1}),
       }
     );
     const savedUser =  await savedUserResponse.json();

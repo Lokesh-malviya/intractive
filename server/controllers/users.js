@@ -11,15 +11,13 @@ export const getUser = async (req,res)=>{
     }
 }
 
-export const setCrops = async (req,res)=>{
+export const setPoints = async (req,res)=>{
     try {
-        const {id,croper,date} = req.body;
-        console.log(date)
+        const {id,roundS} = req.body;
         const user = await User.findById(id);
-        console.log(id);
-        if(!user.crops.includes(croper)){
-            user.crops.push(croper)
-            user.Start.push(date);
+        console.log(user.listRound)
+        if(!user.listRound.includes(roundS)){
+            user.listRound.push(roundS)
         }
         await user.save();
         res.status(200).json(user);
@@ -28,53 +26,43 @@ export const setCrops = async (req,res)=>{
     }
 }
 
-export const delCrops= async (req,res)=>{
+export const setPointn = async (req,res)=>{
     try {
-        const {id,croper} = req.body;
+        const {id,point,timespent} = req.body;
         const user = await User.findById(id);
-        console.log(id,croper)
-        user.crops.pop(croper);
-        await user.save();
-
-    } catch (err) {
-
-        res.status(404).json({message:err.message});
-    }
-}
-
-export const cropGraph = async (req,res)=>{
-    try {
-        const {cropname} = req.body;
-        console.log(cropname)
-        const crops = await Graphsh.findOne({cropname : cropname});
-        if(!crops) return res.status(400).json({msg: "Crop does not exist"});
-        res.status(200).json(crops);
-    } catch (err) {
-        res.status(404).json({message:err.message});
-    }
-}
-
-export const setPoints = async (req,res)=>{
-    try {
-        const {id,points} = req.body;
-        const user = await User.findById(id);
-    
-      
-        user.points = user.points+points;
+        user.points = point;
+        user.timespent = timespent;
         await user.save();
         res.status(200).json(user);
     } catch (err) {
         res.status(404).json({message:err.message});
     }
 }
+
 export const setRounds = async (req,res)=>{
     try {
-        const {id,round} = req.body;
+        const today = new Date(),
+        time = today.getMinutes() + ':' + today.getSeconds();
+        const {id,round,timesp} = req.body;
         const user = await User.findById(id);
-        user.round = round;
+        if(round == 1){
+            if(user.timesu.length>0){
+                user.timesu.length = 0
+            }
+            user.timesu = [timesp]
+        }
+        else{
+            user.timesu.push(timesp);
+            user.round = round;
+            if(user.timesu.length>round){
+                user.timesu.pop()
+            }
+            
+        }
         await user.save();
         res.status(200).json(user);
     } catch (err) {
         res.status(404).json({message:err.message});
     }
 }
+

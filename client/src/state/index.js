@@ -6,7 +6,8 @@ const initialState = {
   graph:null,
   round:1,
   times:0,
-  success:false
+  timeh:1,
+  success:true
 };
 
 export const authSlice = createSlice({
@@ -27,6 +28,9 @@ export const authSlice = createSlice({
     startTime: (state, action) => {
       state.times = action.payload.times;
     },
+    endTime:(state, action) => {
+      state.timeh = action.payload.timeh;
+    },
     setRound: (state, action) => {
       state.round = action.payload.round;
     },
@@ -37,6 +41,6 @@ export const authSlice = createSlice({
   },
 });
 
-export const {setLogin, setLogout,setGraph,startTime,setRound,setSuccess } =
+export const {setLogin, setLogout,setGraph,startTime,setRound,setSuccess,endTime } =
   authSlice.actions;
 export default authSlice.reducer;

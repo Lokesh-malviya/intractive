@@ -1,0 +1,24 @@
+.leaderboard__setciom{
+   display: grid;
+   
+   row-gap: 2rem;
+    
+}
+.sd{
+    color: #fff;
+}
+.graph__section{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 3rem;
+}
+.left__class{
+    display: grid;
+    grid-template-rows: 30px 1fr;
+}
+.up{
+    width: 30rem;
+}
+.down{
+    color: #fff;
+}

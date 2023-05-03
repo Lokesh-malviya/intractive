@@ -1,0 +1,31 @@
+.round4__section{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 1.5rem;
+  }
+  .round6__heading{
+    text-align: justify; /* For Edge */
+    -moz-text-align-last: left; /* For Firefox prior 58.0 */
+    text-align-last: left;
+    color: #fff;
+    margin-top: 2rem;
+  }
+  .f{
+    padding: 0.52rem;
+    width: 2.1rem;
+    border-radius: 5px;
+  }
+  .green__col{
+    background-color: green;
+  }
+  .yellow__col{
+    background-color: #aa9f00;
+  }
+  .grey__col{
+    background-color: #363636;
+  }
+  .fir{
+    display: grid;
+    grid-template-columns: 50px 1fr;
+    margin-top: 1rem;
+  }

@@ -12,14 +12,16 @@ import Navbar from './component/navbar';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import { useSelector } from 'react-redux';
 import { BrowserRouter, Route,Routes,Navigate } from 'react-router-dom'
+import Leader from './component/leaderboard'
 
 function App() {
  const isAuth = Boolean(useSelector((state) => state.token));
  const userId = useSelector((state) => state.user);
  const token = useSelector((state) => state.token);
  const [ro,setRo] = useState(0);
+ const timeh = useSelector((state) => state.timeh);
  const oneTime = async ()=>{
-  const response = await fetch(`https://interactive-ax75.onrender.com/users/${userId}`, {
+  const response = await fetch(`http://localhost:3001/users/${userId}`, {
     method: "GET",
     headers: { Authorization: `Bearer ${token}` },
   });
@@ -31,6 +33,7 @@ function App() {
 
  }, [isAuth]);
 
+
   return (
     <div className="App">
       <BrowserRouter>
@@ -39,7 +42,8 @@ function App() {
         <Route path="/admin" element={<Admin/>}/>
         <Route path="/login" element={<Login/>} />
         <Route path="/home" element={isAuth ?  <HomePage/>: <Navigate to="/"/>}/>
-        <Route path="/home/round"  element={<MuiThemeProvider><Navbar startTimer={1}/><Stage1 rounds={ro}/>{/* <Apps level={levelFactory(4 ** 2)} /> */}</MuiThemeProvider> } />
+        <Route path="/home/round"  element={<MuiThemeProvider><Navbar startTimer={timeh}/><Stage1 rounds={ro}/>{/* <Apps level={levelFactory(4 ** 2)} /> */}</MuiThemeProvider> } />
+        <Route path="/home/leader"  element={<Leader disables={true}/>} />
       </Routes>
       </BrowserRouter>
 

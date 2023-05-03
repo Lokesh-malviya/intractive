@@ -1,9 +1,10 @@
 import React from 'react'
+import Leader from '../leaderboard'
 
 const Admin = () => {
   return (
     <div>
-      Admin
+      <Leader disables={false}/>
     </div>
   )
 }

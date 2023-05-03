@@ -40,3 +40,13 @@ export const login = async (req,res) =>{
         res.status(500).json({error: err.message});
     }
 }
+
+export const getLead = async (req,res)=>{
+    try {
+    
+        const users = await User.find({}); // Fetch all the documents from the User collection
+        res.status(200).json(users);
+    } catch (err) {
+        res.status(404).json({message:err.message});
+    }
+}

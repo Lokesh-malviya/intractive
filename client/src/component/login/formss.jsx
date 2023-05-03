@@ -7,12 +7,14 @@ import {
   Typography,
   useTheme,
 } from "@mui/material";
-
+import { Alert, Space } from 'antd';
 import { Formik } from "formik";
 import * as yup from "yup";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { setLogin,setSuccess } from "../../state/index";
+import { SmileOutlined,FrownOutlined } from '@ant-design/icons';
+import {  notification } from 'antd';
 /*import Dropzone from "react-dropzone"; */
 
 
@@ -49,7 +51,25 @@ const Form = () => {
   const isNonMobile = useMediaQuery("(min-width:600px)");
   const isLogin = pageType === "login";
   const isRegister = pageType === "register";
+  const [isLoggedin,setIsloggedin] = useState(false);
+  const [api, contextHolder] = notification.useNotification();
 
+  const openNotification = () => {
+    api.open({
+      message: 'Success',
+      description:
+        'You have been successfully logged in',
+      icon: <SmileOutlined style={{ color: '#108ee9' }} />,
+    });
+  };
+  const openNotificationbad = () => {
+    api.open({
+      message: 'Error',
+      description:
+        'Invalid Username and Passowrd',
+      icon:<FrownOutlined style={{ color: '#108ee9' }} />,
+    });
+  };
 
   const register = async (values, onSubmitProps) => {
     // this allows us to send form info with image
@@ -62,7 +82,7 @@ const Form = () => {
     
 
      const savedUserResponse = await fetch(
-      "https://interactive-ax75.onrender.com/auth/register",
+      "http://localhost:3001/auth/register",
       {
         method: "POST",
         headers: {  "Access-Control-Allow-Origin":"*",
@@ -82,28 +102,41 @@ const Form = () => {
   };
 
   const login = async (values, onSubmitProps) => {
-    const loggedInResponse = await fetch("https://interactive-ax75.onrender.com/auth/login", {
+    const loggedInResponse = await fetch("http://localhost:3001/auth/login", {
       method: "POST",
       headers: { "Access-Control-Allow-Origin":"*",
       "Content-Type": "application/json" },
       body: JSON.stringify(values),
     });
     const loggedIn = await loggedInResponse.json();
-    console.log("id",loggedIn.token)
+    if(loggedIn.user==null){
+      openNotificationbad();
+    }
     onSubmitProps.resetForm();
-    
-    if (loggedIn) {
+    if (loggedIn && !loggedIn.user.admin) {
+      openNotification();
+      setIsloggedin(true)
        dispatch(
         setLogin({
           user: loggedIn.user._id,
           token: loggedIn.token,
         }),
-        setSuccess({
-          success:true
-        })
       );
-       navigate("/home");
+      setTimeout(() => navigate("/home"), 300)
+       
     }
+    else if (loggedIn.user.admin){
+      openNotification();
+      dispatch(
+        setLogin({
+          user: loggedIn.user._id,
+          token: loggedIn.token,
+        }),
+      );
+       navigate("/admin");
+
+    }
+    
   
   };
 
@@ -113,8 +146,10 @@ const Form = () => {
   };
 
   return (
+  <>
+  {contextHolder}
   
-    <Formik
+  <Formik
       onSubmit={handleFormSubmit}
       initialValues={isLogin ? initialValuesLogin : initialValuesRegister}
       validationSchema={isLogin ? loginSchema : registerSchema}
@@ -220,6 +255,7 @@ const Form = () => {
         </form>
       )}
     </Formik>
+  </>
   );
 };
 

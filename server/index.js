@@ -12,7 +12,7 @@ import authRoutes from "./routes/auth.js";
 import userRoutes from "./routes/users.js";
 
 /* import postRoutes from "./routes/posts.js"; */
-import { register } from './controllers/auth.js';
+import { register , getLead} from './controllers/auth.js';
 import { verifyToken } from "./middleware/auth.js";
 /* import {users} from "./data/index.js"; */
 import User from "./models/User.js";
@@ -52,6 +52,7 @@ app.post("/auth/register",register);
 app.post("/cropdetect",verifyToken,upload.single("picture"),createPost)) */
 
 /* Routes */
+app.get("/lead",getLead)
 app.use("/auth",authRoutes);
 app.use("/users",userRoutes);
 /* app.use("/crop",cropRoute); */

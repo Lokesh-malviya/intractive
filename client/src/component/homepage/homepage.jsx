@@ -2,12 +2,26 @@ import React from 'react'
 import './homepage.css'
 import space from '../../assets/space1.jpg';
 import { useNavigate } from "react-router-dom";
+import {useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
+import { setSuccess } from "../../state/index";
+
 const Homepage = () => {
+
+  const userId = useSelector((state) => state.user);
+  const token = useSelector((state) => state.token);
+  const success = useSelector((state) => state.success);
+  const dispatch = useDispatch();
+
   const navigate = useNavigate();
-    const handelbutton = () =>{
-      
-        navigate("/home/round");
+
+  const handelbutton = async () =>{
+      navigate("/home/round");
     }
+    
+  if(userId == null){
+    navigate("/login");
+  }
   return (
     <div className='home container'>
       <div className="home__grid">

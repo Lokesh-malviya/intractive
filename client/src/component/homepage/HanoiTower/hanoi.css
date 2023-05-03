@@ -1,0 +1,84 @@
+.text-title {
+    font-weight: 700;
+  }
+  
+  .content {
+    border: 1px solid grey;
+    display: inline-flex;
+    font-family: sans-serif;
+    justify-content: space-evenly;
+    text-align: center;
+    width: 100%;
+  }
+  
+  .column-container {
+    align-items: flex-end;
+    border: 1px solid grey;
+    height: 65vh;
+    position: relative;
+    width: 40%;
+  }
+  
+  .center-bar {
+    background-color: brown;
+    width: 4%;
+    height: 100%;
+    border: 1px solid grey;
+    position: absolute;
+    left: 48%;
+    z-index: -1;
+  }
+  
+  .tilem {
+    background-color: burlywood;
+    border: 1px solid black;
+    border-radius: 3px;
+    height: 40px;
+    margin: auto;
+    z-index: 10;
+  }
+  
+  .win-message {
+    background-color: #080;
+    border-radius: 10px;
+    color: #ff0;
+    font-size: 42px;
+    font-weight: 700;
+    left: 50%;
+    position: absolute;
+    text-align: center;
+    text-shadow: 1px 1px #000;
+    top: 40%;
+    transform: translate(-50%, -50%);
+    width: 40%;
+    z-index: 20;
+  }
+  
+  .win-subtitle {
+    font-size: 24px;
+    font-weight: 500;
+    margin: 10px 0;
+  }
+  
+  .win-number {
+    color: #2ff;
+  }
+  .round3__section,
+  .round4__section{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 1.5rem;
+  }
+  .round3__heading{
+    text-align: justify; /* For Edge */
+    -moz-text-align-last: left; /* For Firefox prior 58.0 */
+    text-align-last: left;
+    color: #fff;
+    margin-top: 2rem;
+  }
+  .round3__head{
+    font-size: 2rem;
+}
+.round3__section{
+  margin-top: 3rem;
+}
