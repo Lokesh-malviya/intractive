@@ -23,8 +23,10 @@
 .ssl__ans3{
     background-color: #10A37F;
     cursor: not-allowed;
+    display: none;
 }
 .ssl__ans4{
     background-color: #BF1717;
     cursor: not-allowed;
+    display: none;
 }

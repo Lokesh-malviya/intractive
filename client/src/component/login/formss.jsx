@@ -62,16 +62,24 @@ const Form = () => {
       icon: <SmileOutlined style={{ color: '#108ee9' }} />,
     });
   };
-  const openNotificationbad = () => {
+  const openNotificationbad = (ded) => {
     api.open({
       message: 'Error',
-      description:
-        'Invalid Username and Passowrd',
+      description:ded,
       icon:<FrownOutlined style={{ color: '#108ee9' }} />,
     });
   };
 
   const openNotificationRegister = () => {
+    api.open({
+      message: 'Success',
+      description:
+        'You have been successfully Registred. All set for login!',
+      icon: <SmileOutlined style={{ color: '#108ee9' }} />,
+    });
+  };
+
+  const openNotificationwarnig = () => {
     api.open({
       message: 'Success',
       description:
@@ -107,7 +115,11 @@ const Form = () => {
     } 
     console.log("register") 
 
+    }else{
+      openNotificationbad('Password and Confirm password not matched')
     }
+
+
     onSubmitProps.resetForm();
 
   };
@@ -121,7 +133,7 @@ const Form = () => {
     });
     const loggedIn = await loggedInResponse.json();
     if(loggedIn.user==null){
-      openNotificationbad();
+      openNotificationbad('Invalid Username and Passowrd');
     }
     onSubmitProps.resetForm();
     if (loggedIn && !loggedIn.user.admin) {
