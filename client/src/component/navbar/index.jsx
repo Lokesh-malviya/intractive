@@ -4,29 +4,8 @@ import { useDispatch, useSelector } from "react-redux";
 import {  startTime } from "../../state/index";
 import { Button, Space } from 'antd';
 
-const Navbar = (props) => {
-    const dispatch = useDispatch();
-    const times = useSelector((state) => state.times);
-    const [time, setTime] = useState(0);
-    useEffect(() => {
-        let interval = null;
-        if (props.startTimer) {
-          interval = setInterval(() => {
-            setTime(time => time + 1);
-            dispatch(
-                startTime(
-                  {
-                    times:time, 
-                  })
-              );
-            
-            
-          }, 1000);
-        } else if (!props.startTimer && time !== 0) {
-          clearInterval(interval);
-        }
-        return () => clearInterval(interval);
-      }, [props.startTimer, time]);
+const Navbar = () => {
+    
     
   return (
     <header className="header">
@@ -36,13 +15,13 @@ const Navbar = (props) => {
                 <ul className="nav__list grid">
                     <li className="nav__item">
                         <div to="#" className="nav__link">
-                            Time Elapsed : {times}
+                            Good Luck 😀
                             
                         </div>
                     </li>
                     <li className="nav__item">
                         <div to="#" className="nav__link">
-                            Points
+                            Hints ⚡
                         </div>
                     </li>
                     

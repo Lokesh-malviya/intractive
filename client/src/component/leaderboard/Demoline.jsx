@@ -161,7 +161,7 @@ const DemoLine = ({user}) => {
     </div>
     <div className="right__class">
             <div className="down">
-                Graph : Rounds vs Time Spent
+                Graph : Rounds vs Time Spent (second)
             </div>
             <div className="up">
                 <Area {...configs}/>
@@ -171,7 +171,7 @@ const DemoLine = ({user}) => {
     <div className="graph__section container">
     <div className="left__class">
         <div className="down">
-        Pie : Rounds vs Time spent
+        Pie : Rounds vs Time spent (second)
        </div>
        <div className="up">
        <Pie {...configm} />

@@ -25,8 +25,8 @@ function App() {
     method: "GET",
     headers: { Authorization: `Bearer ${token}` },
   });
-  const { round } = await response.json();
-  setRo(round);
+  const { roundsn } = await response.json();
+  setRo(roundsn);
  }
  useEffect(() => {
   oneTime();
@@ -42,7 +42,7 @@ function App() {
         <Route path="/admin" element={<Admin/>}/>
         <Route path="/login" element={<Login/>} />
         <Route path="/home" element={isAuth ?  <HomePage/>: <Navigate to="/"/>}/>
-        <Route path="/home/round"  element={<MuiThemeProvider><Navbar startTimer={timeh}/><Stage1 rounds={ro}/>{/* <Apps level={levelFactory(4 ** 2)} /> */}</MuiThemeProvider> } />
+        <Route path="/home/round"  element={<MuiThemeProvider><Navbar/><Stage1 roundsn={ro}/>{/* <Apps level={levelFactory(4 ** 2)} /> */}</MuiThemeProvider> } />
         <Route path="/home/leader"  element={<Leader disables={true}/>} />
       </Routes>
       </BrowserRouter>

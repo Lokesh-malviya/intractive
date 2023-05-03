@@ -23,7 +23,7 @@ const UserSchema = new mongoose.Schema({
         default:[],
         
     },
-    round:{
+    roundsn:{
         type: Number,
         default:1 
     },
