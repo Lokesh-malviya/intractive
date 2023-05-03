@@ -1,4 +1,4 @@
-#Spaceaverse Game
+<h1>Spaceaverse Game</h1>
 Spaceaverse is a collection of seven different games that are designed to challenge and entertain players. Each game assesses a different set of soft skills, including problem-solving, critical thinking, and strategic planning.
 
 Games
