@@ -71,6 +71,15 @@ const Form = () => {
     });
   };
 
+  const openNotificationRegister = () => {
+    api.open({
+      message: 'Success',
+      description:
+        'You have been successfully Registred. All set for login!',
+      icon: <SmileOutlined style={{ color: '#108ee9' }} />,
+    });
+  };
+
   const register = async (values, onSubmitProps) => {
     // this allows us to send form info with image
     if(values.password === values.cnfpassword){
@@ -91,14 +100,16 @@ const Form = () => {
       }
     );
     const savedUser = await savedUserResponse.json();
+    if (savedUser) {
+      openNotificationRegister();
+      setTimeout(() => setPageType("login"), 300)
+      
+    } 
+    console.log("register") 
 
     }
     onSubmitProps.resetForm();
 
-    if (savedUser) {
-      setPageType("login");
-    } 
-    console.log("register") 
   };
 
   const login = async (values, onSubmitProps) => {
@@ -122,7 +133,7 @@ const Form = () => {
           token: loggedIn.token,
         }),
       );
-      setTimeout(() => navigate("/home"), 300)
+      setTimeout(() => navigate("/home"), 500)
        
     }
     else if (loggedIn.user.admin){

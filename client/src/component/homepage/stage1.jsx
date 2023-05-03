@@ -120,7 +120,7 @@ const Stage1 = ({rounds}) => {
       {finish && <Confetti />}
      {
       roun == 1? <div className="round1_div container">
-      <Apps level={levelFactory(4 ** 2)} _id={userId} _token={token}/>
+      {start && <Apps level={levelFactory(4 ** 2)} _id={userId} _token={token}/>}
       <div onClick={()=>{
         handelbutton(1)
         setStart(true)

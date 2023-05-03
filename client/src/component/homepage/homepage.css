@@ -45,6 +45,7 @@
 .ssl{
     float: left;
     margin-top: -5rem;
+    margin-right: 2rem;
 }
 .match__section{
     display: grid;
@@ -65,4 +66,7 @@
 }
 .sslp{
     display:none;
+}
+.mhs{
+    display: none;
 }

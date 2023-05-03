@@ -16,9 +16,10 @@ const Homepage = () => {
   const navigate = useNavigate();
 
   const handelbutton = async () =>{
-      navigate("/home/round");
+    setTimeout(() => navigate("/home/round"), 500)
+      
     }
-    
+
   if(userId == null){
     navigate("/login");
   }
