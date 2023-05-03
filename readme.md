@@ -66,3 +66,20 @@ Each game has its own set of instructions that are displayed before the game beg
 
 <h4>Round 7 : 2048</h4>
  In this addictive puzzle game, you'll slide numbered tiles around a grid to combine them and create larger and larger numbers. Your goal is to create a tile with the number 2048 on it - but be careful, because with each move you make, new tiles will appear on the board and you'll quickly run out of space if you're not careful.
+
+<h2>Motivation:</h2>
+The motivation behind creating the "Spaceaverse" game is to provide a fun and engaging way for users to develop and assess their soft skills. Soft skills are essential for personal and professional success, and they include communication, teamwork, problem-solving, creativity, adaptability, time management, and leadership. By incorporating these skills into the game, users can improve their skills while enjoying a challenging and entertaining game.
+
+<h3>Tech Stack:</h3>
+The tech stack used for "Spaceaverse" is the MERN stack, which stands for MongoDB, Express.js, React, and Node.js.</li>
+<ul>
+<li>MongoDB: The game data is stored in MongoDB, a NoSQL database that provides a flexible and scalable way to manage data.</li>
+
+<li>Express.js: Express.js is a web application framework for Node.js that provides robust features for web and mobile applications. It is used to handle the backend logic of the game and the API calls.</li>
+
+<li>React: React is a popular front-end library for building user interfaces. It is used to create the UI components for the game and handle the user interactions.</li>
+
+<li>Node.js: Node.js is an open-source, cross-platform runtime environment for executing JavaScript code outside of a web browser. It is used to handle the server-side logic of the game.
+</li>
+<li>Together, these technologies provide a powerful and efficient framework for building the "Spaceaverse" game, ensuring a smooth and seamless user experience.</li>
+</ul>
