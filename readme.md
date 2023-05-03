@@ -79,27 +79,40 @@ To complete the game, players need to make their way through all seven rounds, e
 Each game has its own set of instructions that are displayed before the game begins. Players can refer to these instructions if they need help understanding the rules of the game.
 
 <h3>Rounds</h3>
+<img src="./client/public/s1.jpg" alt="" width=700>
+        <br>
 <h4>Round 1: 15 Puzzle</h4>
  In this classic sliding puzzle game, you have to slide the tiles around to put them in numerical order from 1 to 15. Sounds easy enough, right? But as you slide the tiles, you'll quickly find that it's harder than it looks. With each move, you'll have to carefully consider the placement of each tile to make sure you don't get stuck.
+ <img src="./client/public/s2.jpg" alt="" width=700>
+        <br>
 
 <h4>Round 2: Magic Match Card</h4>
  In this memory game, you'll be shown a grid of cards with various symbols on them. Your goal is to flip over pairs of cards to find the matching symbols. But be careful - the cards will be shuffled after each turn, so you'll need to remember where you saw each symbol in order to make matches and score points.
-
+<img src="./client/public/s3.jpg" alt="" width=700>
+        <br>
 <h4>Round 3: Tower of Hanoi</h4>
  In this classic puzzle game, you'll be given a stack of disks of different sizes and three pegs. Your goal is to move the entire stack to another peg, obeying the following simple rules: only one disk can be moved at a time, and no disk can be placed on top of a smaller disk. As you progress through the levels, the number of disks will increase, making the game more challenging.
-
+<img src="./client/public/s5.jpg" alt="" width=700>
+        <br>
 <h4>Round 4 : Tenzies</h4>
  This simple but addictive game involves rolling a set of dice until all the dice show the same number. Each turn, you can choose which dice to keep and which to roll again, trying to get all of them to match. The game is over when all the dice show the same number.
-
+<img src="./client/public/s10.jpg" alt="" width=700>
+        <br>
 <h4>Round 5 : Find the Difference between Images</h4>
  In this game, you'll be shown two seemingly identical images and your goal is to find the differences between them. Some differences will be obvious, while others may be more subtle. You'll need to use your powers of observation and attention to detail to find all the differences before time runs out.
-
+<img src="./client/public/s6.jpg" alt="" width=700>
+        <br>
 <h4>Round 6 : Wordle</h4>
  In this word-guessing game, you'll be given a five-letter word and have to guess what it is in as few turns as possible. After each guess, the game will tell you which letters are correct and in the right position, which letters are correct but in the wrong position, and which letters are not in the word at all. Your goal is to guess the word in as few turns as possible.
-
+<img src="./client/public/s7.jpg" alt="" width=700>
+        <br>
 <h4>Round 7 : 2048</h4>
  In this addictive puzzle game, you'll slide numbered tiles around a grid to combine them and create larger and larger numbers. Your goal is to create a tile with the number 2048 on it - but be careful, because with each move you make, new tiles will appear on the board and you'll quickly run out of space if you're not careful.
+<img src="./client/public/s8.jpg" alt="" width=700>
+        <br>
 
+<img src="./client/public/s9.jpg" alt="" width=700>
+        <br>
 <h2>Motivation:</h2>
 The motivation behind creating the "Spaceaverse" game is to provide a fun and engaging way for users to develop and assess their soft skills. Soft skills are essential for personal and professional success, and they include communication, teamwork, problem-solving, creativity, adaptability, time management, and leadership. By incorporating these skills into the game, users can improve their skills while enjoying a challenging and entertaining game.
 
