@@ -3,27 +3,27 @@ Spaceaverse is a collection of seven different games that are designed to challe
 
 <h3>Games</h3>
 1. <b>15 Puzzle</b><br/>
-The 15 Puzzle is a classic game where you need to rearrange the numbered tiles in order to put them in numerical order. The game assesses a player's problem-solving and strategic thinking skills.
+    The 15 Puzzle is a classic game where you need to rearrange the numbered tiles in order to put them in numerical order. The game assesses a player's problem-solving and strategic thinking skills.
 
-2. Magic Match Card
-Magic Match Card is a memory game where players have to match pairs of cards. The game assesses a player's memory and cognitive skills.
+2. <b>Magic Match Card</b><br/>
+    Magic Match Card is a memory game where players have to match pairs of cards. The game assesses a player's memory and cognitive skills.
 
-3. Tower of Hanoi
-The Tower of Hanoi is a classic game where you need to move a tower of disks from one peg to another, following certain rules. The game assesses a player's problem-solving and strategic thinking skills.
+3. <b>Tower of Hanoi</b><br/>
+    The Tower of Hanoi is a classic game where you need to move a tower of disks from one peg to another, following certain rules. The game assesses a player's problem-solving and strategic thinking skills.
 
-4. Tenzies
-Tenzies is a dice game where players need to roll the dice until they are all the same number. The game assesses a player's probability and luck.
+4. <b>Tenzies</b><br/>
+    Tenzies is a dice game where players need to roll the dice until they are all the same number. The game assesses a player's probability and luck.
 
-5. Find the Difference between Images
-In this game, players are presented with two seemingly identical images and they have to spot the differences between them. The game assesses a player's attention to detail and visual perception.
+5. <b>Find the Difference between Images</b><br/>
+    In this game, players are presented with two seemingly identical images and they have to spot the differences between them. The game assesses a player's attention to detail and visual perception.
 
-6. Wordle
-Wordle is a word-guessing game where players have to guess a five-letter word in as few attempts as possible. The game assesses a player's vocabulary and deductive reasoning skills.
+6. <b>Wordle</b><br/>
+    Wordle is a word-guessing game where players have to guess a five-letter word in as few attempts as possible. The game assesses a player's vocabulary and deductive reasoning skills.
 
-7. 2048
-2048 is a number game where players slide numbered tiles on a grid to combine them and create a tile with the number 2048. The game assesses a player's problem-solving and strategic thinking skills.
+7. <b>2048</b><br/>
+    2048 is a number game where players slide numbered tiles on a grid to combine them and create a tile with the number 2048. The game assesses a player's problem-solving and strategic thinking skills.
 
-Game Features
+<h2>Game Features</h2>
 Seven rounds of different games to keep players engaged and entertained
 Eight soft skills assessed, including problem-solving, memory, and critical thinking
 Seven dead-ends to add an element of challenge to the game
