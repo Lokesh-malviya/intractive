@@ -34,34 +34,35 @@ Spaceaverse is a collection of seven different games that are designed to challe
     <li>Authentication</li>
     <li>Spaceaverse has a built-in authentication system that allows users to sign up, sign in, There is also an admin login for game analytics.</li>
 </ul>
-Authorization
-Only logged-in users can play the game and access the user leaderboard and result analysis. Only the admin can access the admin panel for overall analytics and management.
 
-Detailed View of the Game
+<h3>Authorization</h3>
+    Only logged-in users can play the game and access the user leaderboard and result analysis. Only the admin can access the admin panel for overall analytics and management.
+
+<h2>Detailed View of the Game</h2>
 Completion of the Game
 To complete the game, players need to make their way through all seven rounds, earning points and improving their soft skills along the way. At the end of the game, players can view their personal analytics to track their progress and see how they performed in each round.
 
-General Instructions for the Game
+<h2>General Instructions for the Game</h2>
 Each game has its own set of instructions that are displayed before the game begins. Players can refer to these instructions if they need help understanding the rules of the game.
 
-Rounds
-Round 1: 15 Puzzle
-15 Puzzle: In this classic sliding puzzle game, you have to slide the tiles around to put them in numerical order from 1 to 15. Sounds easy enough, right? But as you slide the tiles, you'll quickly find that it's harder than it looks. With each move, you'll have to carefully consider the placement of each tile to make sure you don't get stuck.
+<h3>Rounds</h3>
+<h4>Round 1: 15 Puzzle</h4>
+ In this classic sliding puzzle game, you have to slide the tiles around to put them in numerical order from 1 to 15. Sounds easy enough, right? But as you slide the tiles, you'll quickly find that it's harder than it looks. With each move, you'll have to carefully consider the placement of each tile to make sure you don't get stuck.
 
-Round 2: Magic Match Card
+<h4>Round 2: Magic Match Card</h4>
  In this memory game, you'll be shown a grid of cards with various symbols on them. Your goal is to flip over pairs of cards to find the matching symbols. But be careful - the cards will be shuffled after each turn, so you'll need to remember where you saw each symbol in order to make matches and score points.
 
-Round 3: Tower of Hanoi
+<h4>Round 3: Tower of Hanoi</h4>
  In this classic puzzle game, you'll be given a stack of disks of different sizes and three pegs. Your goal is to move the entire stack to another peg, obeying the following simple rules: only one disk can be moved at a time, and no disk can be placed on top of a smaller disk. As you progress through the levels, the number of disks will increase, making the game more challenging.
 
-Round 4 : Tenzies
+<h4>Round 4 : Tenzies</h4>
  This simple but addictive game involves rolling a set of dice until all the dice show the same number. Each turn, you can choose which dice to keep and which to roll again, trying to get all of them to match. The game is over when all the dice show the same number.
 
-Round 5 : Find the Difference between Images
+<h4>Round 5 : Find the Difference between Images</h4>
  In this game, you'll be shown two seemingly identical images and your goal is to find the differences between them. Some differences will be obvious, while others may be more subtle. You'll need to use your powers of observation and attention to detail to find all the differences before time runs out.
 
-Round 6 : Wordle
+<h4>Round 6 : Wordle</h4>
  In this word-guessing game, you'll be given a five-letter word and have to guess what it is in as few turns as possible. After each guess, the game will tell you which letters are correct and in the right position, which letters are correct but in the wrong position, and which letters are not in the word at all. Your goal is to guess the word in as few turns as possible.
 
-Round 7 : 2048
+<h4>Round 7 : 2048</h4>
  In this addictive puzzle game, you'll slide numbered tiles around a grid to combine them and create larger and larger numbers. Your goal is to create a tile with the number 2048 on it - but be careful, because with each move you make, new tiles will appear on the board and you'll quickly run out of space if you're not careful.
