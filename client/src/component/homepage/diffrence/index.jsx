@@ -7,7 +7,7 @@ const Diffrence = ({userId,token}) => {
     const [no,setNo] = useState(false);
     const multifetchings = async () => {
         const savedUserResponse =  fetch(
-            `http://localhost:3001/users/${userId}/points`,
+            `https://interactive-ax75.onrender.com/users/${userId}/points`,
             {
               method: "PATCH",
               headers: { Authorization: `Bearer ${token}`,"Content-Type": "application/json" },

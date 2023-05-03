@@ -40,7 +40,7 @@ const Stage1 = ({rounds}) => {
     var today = new Date(),
     time = today.getMinutes() + ':' + today.getSeconds();
     const savedUserResponse =  fetch(
-      `http://localhost:3001/users/${userId}/rounds`,
+      `https://interactive-ax75.onrender.com/users/${userId}/rounds`,
       {
         method: "PATCH",
         headers: { Authorization: `Bearer ${token}`,"Content-Type": "application/json" },
@@ -54,7 +54,7 @@ const Stage1 = ({rounds}) => {
  
   useEffect(() => {
     const calcpoints = async () => {
-      const response = await fetch(`http://localhost:3001/users/${userId}`,{
+      const response = await fetch(`https://interactive-ax75.onrender.com/users/${userId}`,{
         method: "GET",
         headers: { Authorization: `Bearer ${token}` },
       }
@@ -95,7 +95,7 @@ const Stage1 = ({rounds}) => {
           })
       );
       const UserResponse =  await fetch(
-        `http://localhost:3001/users/${userId}/pointn`,
+        `https://interactive-ax75.onrender.com/users/${userId}/pointn`,
         {
           method: "PATCH",
           headers: { Authorization: `Bearer ${token}`,"Content-Type": "application/json" },

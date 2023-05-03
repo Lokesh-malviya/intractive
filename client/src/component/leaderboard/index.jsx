@@ -40,14 +40,14 @@ const Leader = ({disables}) => {
       
     useEffect(() => {
         const calcpoint = async () => {
-            const respons = await fetch(`http://localhost:3001/users/${userId}`, {
+            const respons = await fetch(`https://interactive-ax75.onrender.com/users/${userId}`, {
                 method: "GET",
                 headers: { Authorization: `Bearer ${token}` },
             });
             
             const userm = await respons.json();
             setUse(userm)
-            const response = await fetch(`http://localhost:3001/lead`,{
+            const response = await fetch(`https://interactive-ax75.onrender.com/lead`,{
                 method: "GET",
                 headers: { Authorization: `Bearer ${token}` },
               }
