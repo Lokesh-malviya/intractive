@@ -1,8 +1,8 @@
 <h1>Spaceaverse Game</h1>
 Spaceaverse is a collection of seven different games that are designed to challenge and entertain players. Each game assesses a different set of soft skills, including problem-solving, critical thinking, and strategic planning.
 
-Games
-1. 15 Puzzle
+<h3>Games</h3>
+1. <b>15 Puzzle</b><br/>
 The 15 Puzzle is a classic game where you need to rearrange the numbered tiles in order to put them in numerical order. The game assesses a player's problem-solving and strategic thinking skills.
 
 2. Magic Match Card
