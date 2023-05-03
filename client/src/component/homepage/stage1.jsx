@@ -19,10 +19,10 @@ import { useNavigate } from "react-router-dom";
 
 const wordList = ['apple', 'banana', 'chair', 'doggy', 'eagle', 'fruit', 'grape', 'happy', 'igloo', 'jolly', 'kitty', 'lemon', 'mango', 'ninja'];
 
-const Stage1 = ({roundsn}) => {
+const Stage1 = ({round}) => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const [roun,setRoun] = useState(roundsn);
+  const [roun,setRoun] = useState(round);
   const [finish,setFinish] = useState(false)
     const userId = useSelector((state) => state.user);
     const token = useSelector((state) => state.token);
@@ -35,12 +35,12 @@ const Stage1 = ({roundsn}) => {
   }
 
 
-
+  console.log(roun)
   const handelbutton = async (rounding)=>{
     var today = new Date(),
     time = today.getMinutes() + ':' + today.getSeconds();
     const savedUserResponse =  fetch(
-      `https://interactive-ax75.onrender.com/users/${userId}/rounds`,
+      `http://localhost:3001/users/${userId}/rounds`,
       {
         method: "PATCH",
         headers: { Authorization: `Bearer ${token}`,"Content-Type": "application/json" },
@@ -54,7 +54,7 @@ const Stage1 = ({roundsn}) => {
  
   useEffect(() => {
     const calcpoints = async () => {
-      const response = await fetch(`https://interactive-ax75.onrender.com/users/${userId}`,{
+      const response = await fetch(`http://localhost:3001/users/${userId}`,{
         method: "GET",
         headers: { Authorization: `Bearer ${token}` },
       }
@@ -95,7 +95,7 @@ const Stage1 = ({roundsn}) => {
           })
       );
       const UserResponse =  await fetch(
-        `https://interactive-ax75.onrender.com/users/${userId}/pointn`,
+        `http://localhost:3001/users/${userId}/pointn`,
         {
           method: "PATCH",
           headers: { Authorization: `Bearer ${token}`,"Content-Type": "application/json" },
@@ -117,6 +117,7 @@ const Stage1 = ({roundsn}) => {
     }
   return (
     <div>
+      
       {finish && <Confetti />}
      {
       roun == 1? <div className="round1_div container">
@@ -325,8 +326,7 @@ const Stage1 = ({roundsn}) => {
                 </svg>
             </div>
         </>:
-        <>{finish &&
-          <>
+        <>
               <Confetti className='contaier'/>
               <h1 className="home__title">
               SCORE 🚀: {score}
@@ -356,14 +356,6 @@ const Stage1 = ({roundsn}) => {
                         ></path>
                       </svg>
                   </div></>
-
-              }
-              {!finish && setRoun(1)}
-        </>
-     
-    
-
-
      }
      
     </div>
