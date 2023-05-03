@@ -19,16 +19,34 @@ import { useNavigate } from "react-router-dom";
 
 const wordList = ['apple', 'banana', 'chair', 'doggy', 'eagle', 'fruit', 'grape', 'happy', 'igloo', 'jolly', 'kitty', 'lemon', 'mango', 'ninja'];
 
-const Stage1 = ({round}) => {
+const Stage1 = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const [roun,setRoun] = useState(round);
+  const [roun,setRoun] = useState(0);
   const [finish,setFinish] = useState(false)
     const userId = useSelector((state) => state.user);
     const token = useSelector((state) => state.token);
     const[score,setScore] = useState(0);
     const[intime,setIntime] = useState("");
     const[start,setStart] = useState(false)
+    console.log(roun)
+
+    useEffect(() => {
+      const oneTime = async ()=>{
+        const response = await fetch(`https://interactive-ax75.onrender.com/users/${userId}`, {
+          method: "GET",
+          headers: { Authorization: `Bearer ${token}` },
+        });
+        const { roundsu } = await response.json();
+        setRoun(roundsu);
+       }
+      oneTime();
+      console.log("run")
+    
+     }, []);
+
+
+
   const handelfinish = async ()=>{
     setFinish(true);
     console.log(finish)
@@ -50,6 +68,8 @@ const Stage1 = ({round}) => {
     setTimeout(() => setRoun(rounding), 300)
         
   }
+
+  
 
  
   useEffect(() => {
@@ -325,7 +345,7 @@ const Stage1 = ({round}) => {
                   ></path>
                 </svg>
             </div>
-        </>:
+        </>:finish?
         <>
               <Confetti className='contaier'/>
               <h1 className="home__title">
@@ -355,7 +375,7 @@ const Stage1 = ({round}) => {
                           fill="var(--container-color)"
                         ></path>
                       </svg>
-                  </div></>
+                  </div></>:<>Loading..</>
      }
      
     </div>

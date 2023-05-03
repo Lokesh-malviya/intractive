@@ -53,7 +53,7 @@ export const setRounds = async (req,res)=>{
         }
         else{
             user.timesu.push(timesp);
-            user.round = round;
+            user.roundsu = round;
             if(user.timesu.length>round){
                 user.timesu.pop()
             }

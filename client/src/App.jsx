@@ -20,18 +20,8 @@ function App() {
  const token = useSelector((state) => state.token);
  const [ro,setRo] = useState(0);
  const timeh = useSelector((state) => state.timeh);
- const oneTime = async ()=>{
-  const response = await fetch(`https://interactive-ax75.onrender.com/users/${userId}`, {
-    method: "GET",
-    headers: { Authorization: `Bearer ${token}` },
-  });
-  const { roundsu } = await response.json();
-  setRo(roundsu);
- }
- useEffect(() => {
-  oneTime();
 
- }, []);
+
 
 
   return (
@@ -42,7 +32,7 @@ function App() {
         <Route path="/admin" element={<Admin/>}/>
         <Route path="/login" element={<Login/>} />
         <Route path="/home" element={isAuth ?  <HomePage/>: <Navigate to="/"/>}/>
-        <Route path="/home/round"  element={<MuiThemeProvider><Navbar/><Stage1 round={ro}/>{/* <Apps level={levelFactory(4 ** 2)} /> */}</MuiThemeProvider> } />
+        <Route path="/home/round"  element={<MuiThemeProvider><Navbar/><Stage1/>{/* <Apps level={levelFactory(4 ** 2)} /> */}</MuiThemeProvider> } />
         <Route path="/home/leader"  element={<Leader disables={true}/>} />
       </Routes>
       </BrowserRouter>
