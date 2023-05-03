@@ -24,15 +24,16 @@ Spaceaverse is a collection of seven different games that are designed to challe
     2048 is a number game where players slide numbered tiles on a grid to combine them and create a tile with the number 2048. The game assesses a player's problem-solving and strategic thinking skills.
 
 <h2>Game Features</h2>
-Seven rounds of different games to keep players engaged and entertained
-Eight soft skills assessed, including problem-solving, memory, and critical thinking
-Seven dead-ends to add an element of challenge to the game
-User leaderboard to track progress and compare scores with other players
-Admin panel for overall analytics and management
-User analytics available after game ends for personal progress tracking
-Authentication
-Spaceaverse has a built-in authentication system that allows users to sign up, sign in, There is also an admin login for game analytics.
-
+<ul>
+    <li>Seven rounds of different games to keep players engaged and entertained</li>
+    <li>Eight soft skills assessed, including problem-solving, memory, and critical thinking</li>
+    <li>Seven dead-ends to add an element of challenge to the game</li>
+    <li>User leaderboard to track progress and compare scores with other players</li>
+    <li>Admin panel for overall analytics and management</li>
+    <li>User analytics available after game ends for personal progress tracking</li>
+    <li>Authentication</li>
+    <li>Spaceaverse has a built-in authentication system that allows users to sign up, sign in, There is also an admin login for game analytics.</li>
+</ul>
 Authorization
 Only logged-in users can play the game and access the user leaderboard and result analysis. Only the admin can access the admin panel for overall analytics and management.
 
