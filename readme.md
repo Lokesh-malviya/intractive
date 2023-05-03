@@ -37,6 +37,39 @@ Spaceaverse is a collection of seven different games that are designed to challe
 
 <h3>Authorization</h3>
     Only logged-in users can play the game and access the user leaderboard and result analysis. Only the admin can access the admin panel for overall analytics and management.
+<h3>Screenshots</h3>
+
+<p align="center">
+        <img src="./client/public/1.jpg" alt="" width=700>
+        <br>
+        Entry Page
+        <br><br>
+        <img src="./client/public/2.jpg" alt="" width=700>
+        <br>
+        signup page
+        <br><br>
+        <img src="./client/public/3.jpg" alt="" width=700>
+        <br>
+        Login page
+        <br><br>
+        <img src="./client/public/4.jpg" alt="" width=700>
+        <br>
+        Admin Login
+        <br><br>
+        <img src="./client/public/5.jpg" alt="" width=700>
+        <br>
+        Admin Result page
+        <br><br>
+        <img src="./client/public/6.jpg" alt="" width=700>
+        <br>
+        User Result page 1
+        <br>
+        <br>
+        <img src="./client/public/7.jpg" alt="" width=700>
+        <br>
+        User Result page 1
+        <br><br>
+</p>
 
 <h2>Detailed View of the Game</h2>
 Completion of the Game
