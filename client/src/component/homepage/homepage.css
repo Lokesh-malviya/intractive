@@ -70,3 +70,62 @@
 .mhs{
     display: none;
 }
+
+@media screen and (max-width: 992px) {
+    .home__grid{
+        grid-template-rows:  100px 100px;
+        column-gap: 1.25rem;
+    }
+    .set__puzzle{
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    
+  }
+  
+  /* For medium devices */
+  @media screen and (max-width: 768px) {
+    .home__grid{
+        display: block;
+        
+    }
+    .text__info{
+        margin-bottom: var(--mb-2-5);
+        margin-top: 2rem;
+        max-width: none;
+        font-size: 9px;
+        text-align: justify; /* For Edge */
+        -moz-text-align-last: left; /* For Firefox prior 58.0 */
+        text-align-last: left;
+        color: #fff;
+    }
+    .space__left{
+        height: auto;
+       
+    }
+    .match__section{
+        display: block;
+        margin-top: 2rem;
+      
+    }
+    .round2__head{
+        font-size: 1.2rem;
+    }
+    .round2__description{
+        font-size: 0.8rem;
+    }
+    .round3__section{
+        display: block;
+    }
+
+  }
+  
+  
+  /* For small devices */
+  @media screen and (max-width: 390px) {
+    .home__grid{
+        grid-template-columns: 3fr 10px;
+        
+    }
+  }

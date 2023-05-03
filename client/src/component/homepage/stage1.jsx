@@ -40,7 +40,7 @@ const Stage1 = ({round}) => {
     var today = new Date(),
     time = today.getMinutes() + ':' + today.getSeconds();
     const savedUserResponse =  fetch(
-      `http://localhost:3001/users/${userId}/rounds`,
+      `https://interactive-ax75.onrender.com/users/${userId}/rounds`,
       {
         method: "PATCH",
         headers: { Authorization: `Bearer ${token}`,"Content-Type": "application/json" },
@@ -54,7 +54,7 @@ const Stage1 = ({round}) => {
  
   useEffect(() => {
     const calcpoints = async () => {
-      const response = await fetch(`http://localhost:3001/users/${userId}`,{
+      const response = await fetch(`https://interactive-ax75.onrender.com/users/${userId}`,{
         method: "GET",
         headers: { Authorization: `Bearer ${token}` },
       }
@@ -95,7 +95,7 @@ const Stage1 = ({round}) => {
           })
       );
       const UserResponse =  await fetch(
-        `http://localhost:3001/users/${userId}/pointn`,
+        `https://interactive-ax75.onrender.com/users/${userId}/pointn`,
         {
           method: "PATCH",
           headers: { Authorization: `Bearer ${token}`,"Content-Type": "application/json" },
@@ -120,7 +120,7 @@ const Stage1 = ({round}) => {
       
       {finish && <Confetti />}
      {
-      roun == 1? <div className="round1_div container">
+      roun == 1? <section className="round1_div section">
       {start && <Apps level={levelFactory(4 ** 2)} _id={userId} _token={token}/>}
       <div onClick={()=>{
         handelbutton(1)
@@ -169,7 +169,7 @@ const Stage1 = ({round}) => {
                 </svg>
             </div>}
 
-     </div>
+     </section>
      : roun  == 2?<>
      <Magic userId={userId} token = {token}/>
      <div onClick={()=>{

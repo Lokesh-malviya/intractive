@@ -21,7 +21,7 @@ function App() {
  const [ro,setRo] = useState(0);
  const timeh = useSelector((state) => state.timeh);
  const oneTime = async ()=>{
-  const response = await fetch(`http://localhost:3001/users/${userId}`, {
+  const response = await fetch(`https://interactive-ax75.onrender.com/users/${userId}`, {
     method: "GET",
     headers: { Authorization: `Bearer ${token}` },
   });
@@ -35,7 +35,7 @@ function App() {
 
 
   return (
-    <div className="App">
+    <div className="App container">
       <BrowserRouter>
       <Routes>
         <Route path="/" element={<Start/>} />

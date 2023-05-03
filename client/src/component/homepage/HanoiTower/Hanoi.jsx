@@ -108,7 +108,7 @@ const Hanoi = ({userId,token}) => {
     <>
       <div className="round3__section container">
         <span className="round3__heading">
-          <span className="round3__head">Round 3️⃣ Magic Match</span>
+          <span className="round3__head">Round 3️⃣ Tower of Hanoi</span>
             <div className="round2__description">
             
 The treasure hunt continues with the Tower of Hanoi game, which you encounter after discovering the location of a planet rich in valuable resources with the help of a group of friendly aliens. The game involves moving a tower of disks from one peg to another, with the stipulation that a larger disk cannot be placed on top of a smaller disk. With each successful move, you feel a sense of accomplishment and move closer to your ultimate goal. As you make your way through the various levels of the game, you encounter new challenges that test your problem-solving skills and strategic thinking. But with determination and perseverance, you continue to climb the tower and inch closer to the ultimate treasure of the universe.

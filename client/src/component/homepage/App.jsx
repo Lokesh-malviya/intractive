@@ -45,7 +45,7 @@ class App extends Component {
     const { className } = this.props;
     return (
       <section className={className}>
-        <div className="set__puzzle container">
+        <div className="set__puzzle">
         <span className="round1">
           <span className="round1_head">
             Round 1️⃣ Galactic Slider

@@ -29,3 +29,26 @@
     grid-template-columns: 50px 1fr;
     margin-top: 1rem;
   }
+
+
+  
+
+/* For medium devices */
+@media screen and (max-width: 768px) {
+  .round4__section{
+    display: block
+  }
+  .round3__heading{
+    margin-top: 3rem;
+  }
+
+}
+
+
+/* For small devices */
+@media screen and (max-width: 390px) {
+  .home__grid{
+      grid-template-columns: 3fr 10px;
+      
+  }
+}

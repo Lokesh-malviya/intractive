@@ -82,3 +82,39 @@
 .round3__section{
   margin-top: 3rem;
 }
+
+
+@media screen and (max-width: 992px) {
+  .home__grid{
+      grid-template-rows:  100px 100px;
+      column-gap: 1.25rem;
+  }
+  .set__puzzle{
+      display: grid;
+      grid-template-columns: 1fr;
+  }
+
+  
+}
+
+/* For medium devices */
+@media screen and (max-width: 768px) {
+  
+  .round3__section{
+      display: block;
+  }
+  .round4__section{
+    display: block;
+  }
+ 
+
+}
+
+
+/* For small devices */
+@media screen and (max-width: 390px) {
+  .home__grid{
+      grid-template-columns: 3fr 10px;
+      
+  }
+}

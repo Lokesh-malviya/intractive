@@ -24,7 +24,7 @@ const Homepage = () => {
     navigate("/login");
   }
   return (
-    <div className='home container'>
+    <secion className='home section'>
       <div className="home__grid">
         <span className="text__info">
           The Space Treasure Hunt is a three-stage challenge that will take you on a journey through the vast expanse of space. You'll encounter challenging puzzles, riddles, and games that will test your eye for detail, your perseverance, your curiosity, and your ability to think outside the box.<br/>
@@ -53,7 +53,7 @@ const Homepage = () => {
         </span>
         <img src={space} alt="" className="space__left" />
       </div>
-    </div>
+    </secion>
   )
 }
 

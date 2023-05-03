@@ -180,3 +180,35 @@ main{
   font-family: 'Julee', sans-serif;
   font-size: 20px;
 }
+
+
+@media screen and (max-width: 992px) {
+  .home__grid{
+      grid-template-rows:  100px 100px;
+      column-gap: 1.25rem;
+  }
+  .set__puzzle{
+      display: grid;
+      grid-template-columns: 1fr;
+  }
+
+  
+}
+
+/* For medium devices */
+@media screen and (max-width: 768px) {
+  .dice-container {
+  
+    grid-template: auto auto / repeat(2, 1fr);
+  }
+
+}
+
+
+/* For small devices */
+@media screen and (max-width: 390px) {
+  .home__grid{
+      grid-template-columns: 3fr 10px;
+      
+  }
+}
