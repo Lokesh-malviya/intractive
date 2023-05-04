@@ -22,3 +22,6 @@
 .down{
     color: #fff;
 }
+.ant-pagination-item,.ant-pagination-next,.ant-pagination-prev{
+    background-color: #fff;
+}
