@@ -42,7 +42,7 @@ export const setPointn = async (req,res)=>{
 export const setRounds = async (req,res)=>{
     try {
         const today = new Date(),
-        time = today.getMinutes() + ':' + today.getSeconds();
+        time = today.getHours() + ':' +today.getMinutes() + ':' + today.getSeconds();
         const {id,round,timesp} = req.body;
         const user = await User.findById(id);
         if(round == 1){

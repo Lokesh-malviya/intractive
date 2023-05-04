@@ -35,6 +35,7 @@ const Leader = ({disables}) => {
             title: 'Timespent (min)',
           dataIndex: 'timespent',
           key: 'address',
+          render: (text) => <div>{text.toFixed(2)}</div>,
         }
       ];
       

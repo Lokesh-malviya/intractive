@@ -56,7 +56,7 @@ const Stage1 = () => {
   console.log(roun)
   const handelbutton = async (rounding)=>{
     var today = new Date(),
-    time = today.getMinutes() + ':' + today.getSeconds();
+    time = today.getHours() + ':' +today.getMinutes() + ':' + today.getSeconds();
     const savedUserResponse =  fetch(
       `https://interactive-ax75.onrender.com/users/${userId}/rounds`,
       {
@@ -91,22 +91,19 @@ const Stage1 = () => {
       unique.includes(5)?pos = pos + 50:pos = pos;
       unique.includes(6)?pos = pos + 200:pos = pos;
       unique.includes(7)?pos = pos + 200:pos = pos;
-      let min = 0;
-      let sec = 0;
+      
       let tos = 0;
       console.log("timesu ",timesu)
       console.log("pos ",pos)
       for (let values in timesu.slice(0,6)) {
-        
-        const [minuteStr1, secondStr1] = timesu[parseInt(values,10)+1].split(":");
-        const [minuteStr2, secondStr2] = timesu[parseInt(values,10)].split(":");
+      
+        const [hourStr1,minuteStr1, secondStr1] = timesu[parseInt(values,10)+1].split(":");
+        const [hourStr2,minuteStr2, secondStr2] = timesu[parseInt(values,10)].split(":");
         console.log((parseInt(values,10)+1),minuteStr1,secondStr1,minuteStr2,secondStr2)
-        tos += Math.abs(parseInt(minuteStr1,10) - parseInt(minuteStr2,10))*60 + Math.abs(parseInt(secondStr1,10) - parseInt(secondStr2,10))
-        
+        tos += ((Math.abs(parseInt(hourStr1,10))*60)+parseInt(minuteStr1,10)+(Math.abs(parseInt(secondStr1,10))/60))-((Math.abs(parseInt(hourStr2,10))*60)+parseInt(minuteStr2,10)+(Math.abs(parseInt(secondStr2,10))/60))
+        console.log(tos)
       }
-      min = Math.floor(tos / 60);
-      sec = tos % 60;
-      setIntime(`${min}:${sec}`)
+      setIntime(`${tos.toFixed(2)}`)
       setScore(pos)
       dispatch(
         endTime(
@@ -119,7 +116,7 @@ const Stage1 = () => {
         {
           method: "PATCH",
           headers: { Authorization: `Bearer ${token}`,"Content-Type": "application/json" },
-          body: JSON.stringify({id:userId,point: pos,timespent:parseFloat(`${min}.${sec}`)}),
+          body: JSON.stringify({id:userId,point: pos,timespent:parseFloat(`${tos}`)}),
         }
       );
     
