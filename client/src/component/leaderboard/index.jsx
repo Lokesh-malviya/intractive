@@ -55,6 +55,7 @@ const Leader = ({disables}) => {
               );
             const userResp = await response.json();
             setUsecol(userResp);
+            console.log("mydata :",response)
             const mydata = [];
             for (let values in userResp) {
                 mydata.push(
@@ -66,7 +67,6 @@ const Leader = ({disables}) => {
                 )
                 
               }
-            console.log(mydata)
             mydata.sort((a, b)=> {
                 if (a.points === b.points){
                   return a.timespent > b.timespent ? -1 : 1
@@ -78,6 +78,8 @@ const Leader = ({disables}) => {
             for (let valued in mydata){
                 mydata[valued].key = valued
             }
+
+            console.log(mydata)
               setData(mydata)
             
             

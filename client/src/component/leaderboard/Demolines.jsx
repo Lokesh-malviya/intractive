@@ -28,8 +28,8 @@ const DemoLines = ({user}) => {
             let tos = [];
             for (let valuesk in user[m].timesu.slice(0,7)) {
                 
-              const [hourStr1,minuteStr1, secondStr1] = timesu[parseInt(valuesk,10)+1].split(":");
-              const [hourStr2,minuteStr2, secondStr2] = timesu[parseInt(valuesk,10)].split(":");
+              const [hourStr1,minuteStr1, secondStr1] = user.timesu[parseInt(valuesk,10)+1].split(":");
+              const [hourStr2,minuteStr2, secondStr2] = user.timesu[parseInt(valuesk,10)].split(":");
               console.log((parseInt(valuesk,10)+1),minuteStr1,secondStr1,minuteStr2,secondStr2)
               min += ((Math.abs(parseInt(hourStr1,10))*60)+parseInt(minuteStr1,10)+(Math.abs(parseInt(secondStr1,10))/60))-((Math.abs(parseInt(hourStr2,10))*60)+parseInt(minuteStr2,10)+(Math.abs(parseInt(secondStr2,10))/60))
               tos.push(min)
