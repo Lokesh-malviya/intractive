@@ -11,7 +11,7 @@ const DemoLines = ({user}) => {
 
   const asyncFetch = () => {
     let fdata = []
-    console.log(user)
+    console.log("admin",user)
     for (let m in user.slice(0,3)){
             let unique = user[m].listRound.filter((item, i, ar) => ar.indexOf(item) === i);
             let poi = []
@@ -27,9 +27,9 @@ const DemoLines = ({user}) => {
             let sec = 0;
             let tos = [];
             for (let valuesk in user[m].timesu.slice(0,7)) {
-                
-              const [hourStr1,minuteStr1, secondStr1] = user.timesu[parseInt(valuesk,10)+1].split(":");
-              const [hourStr2,minuteStr2, secondStr2] = user.timesu[parseInt(valuesk,10)].split(":");
+                console.log(user[m].timesu)
+              const [hourStr1,minuteStr1, secondStr1] = user[m].timesu[parseInt(valuesk,10)+1].split(":");
+              const [hourStr2,minuteStr2, secondStr2] = user[m].timesu[parseInt(valuesk,10)].split(":");
               console.log((parseInt(valuesk,10)+1),minuteStr1,secondStr1,minuteStr2,secondStr2)
               min += ((Math.abs(parseInt(hourStr1,10))*60)+parseInt(minuteStr1,10)+(Math.abs(parseInt(secondStr1,10))/60))-((Math.abs(parseInt(hourStr2,10))*60)+parseInt(minuteStr2,10)+(Math.abs(parseInt(secondStr2,10))/60))
               tos.push(min)
