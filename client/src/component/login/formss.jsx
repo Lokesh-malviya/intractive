@@ -7,7 +7,7 @@ import {
   Typography,
   useTheme,
 } from "@mui/material";
-import { Alert, Space } from 'antd';
+import { Alert, Space,Spin } from 'antd';
 import { Formik } from "formik";
 import * as yup from "yup";
 import { useNavigate } from "react-router-dom";
@@ -53,6 +53,7 @@ const Form = () => {
   const isRegister = pageType === "register";
   const [isLoggedin,setIsloggedin] = useState(false);
   const [api, contextHolder] = notification.useNotification();
+  const [sel,onsel] = useState(false);
 
   const openNotification = () => {
     api.open({
@@ -110,12 +111,16 @@ const Form = () => {
     if (savedUser) {
       openNotificationRegister();
       setTimeout(() => setPageType("login"), 300)
+      onsel(false)
       
     } 
+    
     console.log("register") 
 
     }else{
       openNotificationbad('Password and Confirm password not matched')
+      onsel(false)
+
     }
 
 
@@ -133,6 +138,7 @@ const Form = () => {
     const loggedIn = await loggedInResponse.json();
     if(loggedIn.user==null){
       openNotificationbad('Invalid Username and Passowrd');
+      onsel(false)
     }
     onSubmitProps.resetForm();
     if (loggedIn && !loggedIn.user.admin) {
@@ -170,7 +176,9 @@ const Form = () => {
   return (
   <>
   {contextHolder}
-  
+ {sel &&  <div className="example">
+    <Spin />
+  </div>}
   <Formik
       onSubmit={handleFormSubmit}
       initialValues={isLogin ? initialValuesLogin : initialValuesRegister}
@@ -254,6 +262,7 @@ const Form = () => {
               }}
               onClick={() => {
                 openNotificationwarnig("please wait a minute and for better experience login through laptop/desktop")
+                onsel(true);
               }}
             >
               {isLogin ? "LOGIN" : "REGISTER"}
