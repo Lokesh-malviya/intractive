@@ -145,7 +145,7 @@ const Form = () => {
           token: loggedIn.token,
         }),
       );
-      setTimeout(() => navigate("/home"), 500)
+      setTimeout(() => navigate("/home"), 100)
        
     }
     else if (loggedIn.user.admin){
