@@ -79,11 +79,10 @@ const Form = () => {
     });
   };
 
-  const openNotificationwarnig = () => {
+  const openNotificationwarnig = (sd) => {
     api.open({
-      message: 'Success',
-      description:
-        'You have been successfully Registred. All set for login!',
+      message: 'Wait',
+      description:sd,
       icon: <SmileOutlined style={{ color: '#108ee9' }} />,
     });
   };
@@ -252,6 +251,9 @@ const Form = () => {
                 backgroundColor: '#2D9D75',
                 color: '#fff',
                 "&:hover": { color: palette.primary.main },
+              }}
+              onClick={() => {
+                openNotificationwarnig("please wait a minute and for better experience login through laptop/desktop")
               }}
             >
               {isLogin ? "LOGIN" : "REGISTER"}
